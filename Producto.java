@@ -1,42 +1,39 @@
 public class Producto {
-    // Atributos
-    public final String Se = ";";
-    protected String Nombre;
-    protected float Precio;
-    protected String Proveedor;
-    protected String Lote;
-    protected int RestricciónEdad;
-    
-    // Constructores
+    protected String nombre;
+    protected float precio;
+    protected String proveedor;
+    protected String lote;
+    protected int restricciónEdad;
+    protected int cantidadDisponible;
+
     public Producto() {}
 
-    public Producto(String nombre, float precio, String proveedor, String lote, int restricciónEdad) {
-        Nombre = nombre;
-        Precio = precio;
-        Proveedor = proveedor;
-        Lote = lote;
-        RestricciónEdad = restricciónEdad;
+    public Producto(String nombre, float precio, String proveedor, String lote, int restricciónEdad, int cantidadDisponible) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.proveedor = proveedor;
+        this.lote = lote;
+        this.restricciónEdad = restricciónEdad;
+        this.cantidadDisponible = cantidadDisponible;
     }
 
+    public int getCantidadDisponible() {
+        return cantidadDisponible;
+    }
 
-    // Métodos
+    public void setCantidadDisponible(int cantidadDisponible) {
+        this.cantidadDisponible = cantidadDisponible;
+    }
+
     public String ListarInformación() {
-        return "Nombre: " + Nombre + "\nPrecio: " + Precio + "\nProveedor: " + Proveedor +
-        "\nLote: " + Lote + "\nRestricción de edad: " + RestricciónEdad;
+        return "Nombre: " + nombre + "\nPrecio: " + precio + "\nProveedor: " + proveedor +
+                "\nLote: " + lote + "\nRestricción de edad: " + restricciónEdad + "\nCantidad Disponible: " + cantidadDisponible;
     }
 
-    public String Serializar() {
-        return this.getClass().toString() + Se + Nombre + Se + Precio + Se + 
-        Proveedor + Se + Lote + Se + RestricciónEdad;
+    public String toCSV() {
+        return this.getClass().getSimpleName() + "," + nombre + "," + precio + "," +
+                cantidadDisponible + "," + lote + "," + restricciónEdad;
     }
 
-    public String[] DeSerializar(String[] Datos_DeSerializados){      
-        this.Nombre = Datos_DeSerializados[1];
-        this.Precio = Float.parseFloat(Datos_DeSerializados[2]);
-        this.Proveedor = Datos_DeSerializados[3];
-        this.Lote = Datos_DeSerializados[4];
-        this.RestricciónEdad = Integer.parseInt(Datos_DeSerializados[5]);
-
-        return Datos_DeSerializados;
-    }
+   
 }
