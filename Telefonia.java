@@ -1,5 +1,6 @@
-public class Telefonía extends Producto{
+public class Telefonia extends Producto{
     // Atributos
+    /*
     public String Compañía;
     public float Comisión;
 
@@ -34,4 +35,10 @@ public class Telefonía extends Producto{
 
         return Datos_DeSerializados;
     }
+    */
+   public Telefonia() {}
+
+   public Telefonia(String nombre, double precio, int cantidadDisponible, String codigoUnico, int restriccion_edad){
+       super(nombre, precio, cantidadDisponible, codigoUnico, restriccion_edad);
+   }
 }

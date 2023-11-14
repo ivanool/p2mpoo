@@ -14,60 +14,17 @@ public void cargarInventario(String csvFileName) {
         String line;
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(",");
-            if (parts.length >= 5) {
+            if (parts.length >= 6) {
                 String tipo = parts[0];
+                System.out.println(tipo);
                 String nombre = parts[1];
+                System.out.println(nombre);
                 double precio = Double.parseDouble(parts[2]);
                 int cantidadDisponible = Integer.parseInt(parts[3]);
                 String codigoUnico = parts[4];
+                int restriccion_edad = Integer.parseInt(parts[5]);
                 Producto producto;
-
-                if ("Agua".equals(tipo)) {
-                    producto = new Agua(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Azucarada".equals(tipo)) {
-                    producto = new Azucarada(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Alcohólica".equals(tipo)) {
-                    producto = new Alcoholica(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Salado".equals(tipo)) {
-                    producto = new Salado(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Dulces".equals(tipo)) {
-                    producto = new Dulce(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Comida Rápida".equals(tipo)) {
-                    producto = new Rapida(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Embutidos".equals(tipo)) {
-                    producto = new Embutidos(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Pan".equals(tipo)) {
-                    producto = new Pan(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Quesos".equals(tipo)) {
-                    producto = new Queso(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Comida para Mascotas".equals(tipo)) {
-                    producto = new Mascotas(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Salsas".equals(tipo)) {
-                    producto = new Salsa(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Sal y Parecidos".equals(tipo)) {
-                    producto = new Complementos(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Tortillas".equals(tipo)) {
-                    producto = new Tortillas(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Bloqueador Solar".equals(tipo)) {
-                    producto = new BloqueadorSolar(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Cremas".equals(tipo)) {
-                    producto = new Crema(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Serums".equals(tipo)) {
-                    producto = new Serum(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Toners".equals(tipo)) {
-                    producto = new Toner(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Limpiadores Faciales".equals(tipo)) {
-                    producto = new LimpiadorFacial(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Shampoo".equals(tipo)) {
-                    producto = new Shampoo(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Jabones".equals(tipo)) {
-                    producto = new Jabon(nombre, precio, cantidadDisponible, codigoUnico);
-                } else if ("Bálsamos".equals(tipo)) {
-                    producto = new Balsamos(nombre, precio, cantidadDisponible, codigoUnico);
-                } else {
-                    producto = new Producto(nombre, precio, cantidadDisponible, codigoUnico);
-                }
-
+                producto = asignar_subclase(tipo, nombre, precio, cantidadDisponible, codigoUnico, restriccion_edad);
                 productos.add(producto);
             }
         }
@@ -107,24 +64,22 @@ public void cargarInventario(String csvFileName) {
 
     public void mostrarInventario() {
         for (Producto producto : productos) {
-            System.out.println(producto.toString());
+            System.out.println(producto.ListarInformacion());
         }
     }
 
     public void modificarCSV(String csvFileName) {
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(csvFileName));
-            for (Producto producto : productos) {
-                String line = producto.toCSV(); 
-                writer.newLine();
-            }
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFileName))) {
+        for (Producto producto : productos) {
+            String line = producto.toCSV();
+            writer.write(line);
+            writer.newLine(); // Agrega una nueva línea después de cada producto
         }
-
-        
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+}
+
 
     public void modificarCantidadProducto(String nombre, int nuevaCantidad) {
         for (Producto producto : productos) {
@@ -132,6 +87,31 @@ public void cargarInventario(String csvFileName) {
                 producto.setCantidadDisponible(nuevaCantidad);
                 break;
             }
+        }
+    }
+
+    private Producto asignar_subclase(String tipo, String nombre, double precio, int cantidadDisponible, String codigoUnico, int restriccion_edad) {
+        Producto p;
+        switch(tipo){
+            
+            case "Bebida":
+                p = new Bebida(nombre, precio, cantidadDisponible, codigoUnico, restriccion_edad);
+                return p;
+            case "Comida":
+                p = new Comida(nombre, precio, cantidadDisponible, codigoUnico, restriccion_edad);
+                return p;
+            case "CuidadoPersonal":
+                p = new CuidadoPersonal(nombre, precio, cantidadDisponible, codigoUnico, restriccion_edad);
+                return p;
+            case "Telefonia":
+                p = new Telefonia(nombre, precio, cantidadDisponible, codigoUnico, restriccion_edad);
+                return p;
+            case "Alcoholica":
+                p = new Alcoholica(nombre, precio, cantidadDisponible, codigoUnico, restriccion_edad);
+                return p;
+            default:
+                p = new Producto(nombre, precio, cantidadDisponible, codigoUnico, restriccion_edad);
+                return p;
         }
     }
 }

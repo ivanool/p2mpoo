@@ -37,7 +37,7 @@ public class Caja {
             writer.write("----- Ticket de Compra -----");
             writer.newLine();
             for (Producto producto : carrito) {
-                writer.write(producto.ListarInformación());
+                writer.write(producto.ListarInformacion());
                 writer.newLine();
                 writer.write("Precio: " + producto.getPrecio());
                 writer.newLine();
@@ -57,7 +57,7 @@ public class Caja {
     public void listarObjetosEnCarrito() {
         System.out.println("----- Productos en el Carrito -----");
         for (Producto producto : carrito) {
-            System.out.println(producto.ListarInformación());
+            System.out.println(producto.ListarInformacion());
             System.out.println("------------------------------");
         }
     }
@@ -68,7 +68,7 @@ public class Caja {
     }
 
     // Modificar la cantidad de productos en el carrito
-    public void modificarCantidadProducto(Producto producto, int nuevaCantidad) {
+    /*public void modificarCantidadProducto(Producto producto, int nuevaCantidad) {
         if (nuevaCantidad > 0) {
             if (carrito.contains(producto)) {
                 int index = carrito.indexOf(producto);
@@ -78,4 +78,5 @@ public class Caja {
             carrito.remove(producto);
         }
     }
+    */
 }

@@ -15,30 +15,11 @@ Métodos necesarios:
 2. Tipos de productos:
 
 - Bebidas
-    - azucaradas
     - alcoholicas
-    - agua
-- frituras
-    - salado
-    - dulces
 - comida
-    - comida rapida
-    - embutidos
-    - pan
-    - quesos
-    - comida para mascotas
-    - Salsas
-    - sal y parecidos
-    - tortillas
 - cuidado personal
-    - bloqueador solar
-    - cremas
-    - serums
-    - toners
-    - limpiadores faciales
-    - shampoo
-    - jabones
-    - balsamos
+- Telefonía
+
 
 
 # Caja

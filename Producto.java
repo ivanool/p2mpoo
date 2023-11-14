@@ -1,39 +1,44 @@
 public class Producto {
     protected String nombre;
-    protected float precio;
+    protected double precio;
     protected String proveedor;
-    protected String lote;
-    protected int restricciónEdad;
+    protected String codigoUnico;
+    protected int restriccion_edad;
     protected int cantidadDisponible;
 
     public Producto() {}
 
-    public Producto(String nombre, float precio, String proveedor, String lote, int restricciónEdad, int cantidadDisponible) {
+    public Producto(String nombre, double precio, int cantidadDisponible, String codigoUnico, int restriccion_edad) {
         this.nombre = nombre;
         this.precio = precio;
-        this.proveedor = proveedor;
-        this.lote = lote;
-        this.restricciónEdad = restricciónEdad;
         this.cantidadDisponible = cantidadDisponible;
+        this.codigoUnico = codigoUnico;
+        this.restriccion_edad = restriccion_edad;
     }
 
     public int getCantidadDisponible() {
         return cantidadDisponible;
+    }
+    public String getTipo(){
+        return this.getClass().getSimpleName();
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public double getPrecio() {
+        return precio;
     }
 
     public void setCantidadDisponible(int cantidadDisponible) {
         this.cantidadDisponible = cantidadDisponible;
     }
 
-    public String ListarInformación() {
-        return "Nombre: " + nombre + "\nPrecio: " + precio + "\nProveedor: " + proveedor +
-                "\nLote: " + lote + "\nRestricción de edad: " + restricciónEdad + "\nCantidad Disponible: " + cantidadDisponible;
+    public String ListarInformacion() {
+        return "Nombre: " + nombre + "\nPrecio: " + precio + "\nCantidad Disponible: " + cantidadDisponible + "\nCódigo: " + codigoUnico + "\nRestricción de Edad: " + restriccion_edad;
     }
 
     public String toCSV() {
-        return this.getClass().getSimpleName() + "," + nombre + "," + precio + "," +
-                cantidadDisponible + "," + lote + "," + restricciónEdad;
+        return this.getClass().getSimpleName() +","+ nombre + "," + precio + "," + cantidadDisponible + "," + codigoUnico + "," + restriccion_edad;
     }
-
-   
+  
 }
