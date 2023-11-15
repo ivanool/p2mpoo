@@ -65,17 +65,6 @@ public class PruebaGUI extends JFrame {
         model.setDataVector(datosInventario, new String[]{"Tipo", "Nombre", "Precio", "Cantidad", "Código Único", "Restricción Edad"});
     }
 
-    private void modificarCantidadProducto() {
-        // Implementar lógica para modificar cantidad aquí
-        // Puedes abrir un cuadro de diálogo para ingresar el producto y la nueva cantidad
-        // y luego actualizar el inventario y la tabla.
-        // Ejemplo:
-        // String nombreProducto = JOptionPane.showInputDialog("Ingrese el nombre del producto:");
-        // int nuevaCantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva cantidad:"));
-        // inventario.modificarCantidadProducto(nombreProducto, nuevaCantidad);
-        // mostrarInventario();
-    }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             PruebaGUI app = new PruebaGUI();
