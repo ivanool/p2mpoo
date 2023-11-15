@@ -29,6 +29,18 @@ public class Producto {
         return precio;
     }
 
+    public String getCodigoUnico() {
+        return codigoUnico;
+    }
+
+    public int getRestriccionEdad() {
+        return restriccion_edad;
+    }
+
+    public String getTipoProducto() {
+        return this.getClass().getSimpleName();
+    }
+
     public void setCantidadDisponible(int cantidadDisponible) {
         this.cantidadDisponible = cantidadDisponible;
     }

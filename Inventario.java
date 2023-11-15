@@ -118,4 +118,21 @@ public void cargarInventario(String csvFileName) {
                 return p;
         }
     }
+
+    
+    public Object[][] obtenerDatosInventario() {
+        Object[][] datosInventario = new Object[productos.size()][6];
+
+        for (int i = 0; i < productos.size(); i++) {
+            Producto producto = productos.get(i);
+            datosInventario[i][0] = producto.getTipo();
+            datosInventario[i][1] = producto.getNombre();
+            datosInventario[i][2] = producto.getPrecio();
+            datosInventario[i][3] = producto.getCantidadDisponible();
+            datosInventario[i][4] = producto.getCodigoUnico();
+            datosInventario[i][5] = producto.getRestriccionEdad();
+        }
+
+        return datosInventario;
+    }
 }

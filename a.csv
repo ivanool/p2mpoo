@@ -1,4 +1,40 @@
-Comida,Hamburguesa,40.5,20, JDK18,0
+Comida,Hamburguesa,40.5,20,JDK18,0
 Bebida,Coca cola,17.0,100,COCA01,0
 CuidadoPersonal,Shampoo,19.5,100,GAR100,0
 Alcoholica,Cerveza,25.0,100,CER100,1
+Bebida,Agua,12.0,100,AGU100,0
+Alcoholica,Vino,1200.0,100,VIN100,1
+Bebida,Jugo,18.0,100,JUG100,0
+Comida,Papas,15.0,100,PAP100,0
+Comida,Ensalada,20.0,100,ENS100,0
+CuidadoPersonal,BeautyOfJoseon,500.0,10,BEA100,0
+CuidadoPersonal,Crema,100.0,100,CRE100,0
+CuidadoPersonal,Desodorante,50.0,100,DES100,0
+CuidadoPersonal,Toalla,30.0,100,TOA100,0
+Comida,Helado,25.0,100,HEL100,0
+Bebida,Leche,20.0,100,LEC100,0
+Bebida,Te,15.0,100,TEA100,0
+Bebida,Coca Cola,1.5,200,CC001,0
+Comida,Hamburguesa,5.99,50,HMB002,0
+CuidadoPersonal,Pantene Shampoo,8.5,75,PAN003,0
+Alcoholica,Cerveza Modelo,3.5,80,CMD004,1
+Bebida,Jugo de Naranja Tropicana,2.0,100,JNT005,0
+Alcoholica,Vino Concha y Toro,15.0,30,VCT006,1
+Comida,Papas Lay's,2.5,150,PLS007,0
+Comida,Ensalada Caesar,7.0,40,ECA008,0
+CuidadoPersonal,Nivea Crema Facial,12.99,60,NCV009,0
+Bebida,Sprite,1.75,120,SPT010,0
+Alcoholica,Heineken,3.99,60,HKN011,1
+Bebida,Leche Lala,4.0,80,LLL012,0
+Bebida,Té Celestial Seasonings,3.25,90,TCS013,0
+CuidadoPersonal,Dove Desodorante,4.5,70,DVD014,0
+Comida,Helado Ben & Jerry's,6.0,50,HBJ015,0
+Bebida,Café Starbucks,2.75,100,CSB016,0
+Comida,Pizza Domino's,12.0,30,PDM017,0
+CuidadoPersonal,Jabón Dove,1.99,100,JDV018,0
+Alcoholica,Jack Daniel's Whiskey,25.0,20,JDW019,1
+Bebida,Smoothie Jamba Juice,4.5,50,SJJ020,0
+Alcoholica,Patrón Tequila,40.0,15,PTE021,1
+Comida,Sushi Nobu,18.0,25,SNB022,0
+CuidadoPersonal,Loción Corporal Neutrogena,10.99,50,LNC023,0
+Bebida,Corona Extra,5.0,40,CNE024,1
