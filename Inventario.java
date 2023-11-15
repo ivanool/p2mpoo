@@ -84,11 +84,15 @@ public void cargarInventario(String csvFileName) {
     public void modificarCantidadProducto(String nombre, int nuevaCantidad) {
         for (Producto producto : productos) {
             if (producto.getNombre().equals(nombre)) {
-                producto.setCantidadDisponible(nuevaCantidad);
                 break;
             }
         }
     }
+
+    public int getCantidadProducto(Producto producto) {
+        return producto.getCantidadDisponible();
+    }
+    
 
     private Producto asignar_subclase(String tipo, String nombre, double precio, int cantidadDisponible, String codigoUnico, int restriccion_edad) {
         Producto p;

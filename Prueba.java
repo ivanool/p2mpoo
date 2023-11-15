@@ -22,7 +22,12 @@ public class Prueba {
         c.listarObjetosEnCarrito();
         c.vaciarCarrito();
         c.listarObjetosEnCarrito();
+        c.agregarProductoAlCarrito(i.buscarProducto("Coca cola"));
+        c.agregarProductoAlCarrito(i.buscarProducto("Hamburguesa"));
+        c.modificarCantidadProducto(i.buscarProducto("Coca cola"), 15);
         c.imprimirTicket();
+
+        i.mostrarInventario();
 
 
     }

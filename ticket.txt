@@ -1,3 +1,13 @@
 ----- Ticket de Compra -----
-Total: 0.0
+Coca cola
+Precio: 17.0
+Cantidad: 15
+Subtotal: 255.0
+------------------------------
+Hamburguesa
+Precio: 40.5
+Cantidad: 1
+Subtotal: 40.5
+------------------------------
+Total: 295.5
 Gracias por su compra!
