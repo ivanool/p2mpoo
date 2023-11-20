@@ -11,14 +11,13 @@ public class Caja {
         this.inventario = inventario;
     }
 
-    // Agregar un producto al carrito
+
     public void agregarProductoAlCarrito(Producto producto) {
         ItemCarrito item = new ItemCarrito(producto, 1);
         item.getProducto().setCantidadDisponible(item.getProducto().getCantidadDisponible() - 1);
         carrito.add(item);
     }
 
-    // Borrar un producto del carrito
     public void borrarProductoDelCarrito(Producto producto) {
         for (ItemCarrito item : carrito) {
             if (item.getProducto().equals(producto)) {
@@ -33,7 +32,7 @@ public class Caja {
         return carrito;
     }
 
-    // Ver el total del carrito
+
     public float verTotalDelCarrito() {
         float total = 0;
         for (ItemCarrito item : carrito) {
@@ -43,7 +42,7 @@ public class Caja {
     }
 
     
-    // Imprimir ticket y guardar en un archivo ticket.txt
+
     public void imprimirTicket() {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("ticket.txt"));
@@ -70,7 +69,6 @@ public class Caja {
         }
     }
 
-    // Listar objetos en el carrito
     public void listarObjetosEnCarrito() {
         System.out.println("----- Productos en el Carrito -----");
         for (ItemCarrito item: carrito) {
@@ -79,7 +77,7 @@ public class Caja {
         }
     }
 
-    // Vaciar el carrito
+
     public void vaciarCarrito() {
         for (ItemCarrito item : carrito) {
             item.getProducto().setCantidadDisponible(item.getProducto().getCantidadDisponible() + item.getCantidad());
@@ -91,7 +89,7 @@ public class Caja {
         carrito.clear();
     }
 
-    // Modificar la cantidad de productos en el carrito
+
     public void modificarCantidadProducto(Producto producto, int nuevaCantidad) {
         ItemCarrito item = null;
         for(ItemCarrito items : carrito){

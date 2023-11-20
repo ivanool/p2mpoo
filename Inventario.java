@@ -52,7 +52,7 @@ private void cargarInventario(String csvFileName) {
                 return producto;
             }
         }
-        return null; // Producto no encontrado
+        return null; 
     }
 
     public void eliminarProducto(String nombre) {
@@ -74,7 +74,7 @@ private void cargarInventario(String csvFileName) {
         for (Producto producto : productos) {
             String line = producto.toCSV();
             writer.write(line);
-            writer.newLine(); // Agrega una nueva línea después de cada producto
+            writer.newLine();
         }
     } catch (IOException e) {
         e.printStackTrace();
