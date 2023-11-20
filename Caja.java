@@ -29,6 +29,10 @@ public class Caja {
         }
     }
 
+    public ArrayList<ItemCarrito> getCarrito() {
+        return carrito;
+    }
+
     // Ver el total del carrito
     public float verTotalDelCarrito() {
         float total = 0;
@@ -38,6 +42,7 @@ public class Caja {
         return total;
     }
 
+    
     // Imprimir ticket y guardar en un archivo ticket.txt
     public void imprimirTicket() {
         try {
@@ -79,6 +84,10 @@ public class Caja {
         for (ItemCarrito item : carrito) {
             item.getProducto().setCantidadDisponible(item.getProducto().getCantidadDisponible() + item.getCantidad());
         }
+        carrito.clear();
+    }
+
+    public void comprar() {
         carrito.clear();
     }
 

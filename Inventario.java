@@ -3,12 +3,13 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Inventario {
-    private ArrayList<Producto> productos = new ArrayList<Producto>();
+    public ArrayList<Producto> productos = new ArrayList<Producto>();
 
     public Inventario() {
+        cargarInventario("a.csv");
     }
 
-public void cargarInventario(String csvFileName) {
+private void cargarInventario(String csvFileName) {
     try {
         BufferedReader reader = new BufferedReader(new FileReader(csvFileName));
         String line;

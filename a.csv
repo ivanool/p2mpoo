@@ -1,5 +1,5 @@
-Comida,Hamburguesa,40.5,20,JDK18,0
-Bebida,Coca cola,17.0,100,COCA01,0
+Comida,Hamburguesa,40.5,16,JDK18,0
+Producto,Coca cola,17.0,111,COCA01,0
 CuidadoPersonal,Shampoo,19.5,100,GAR100,0
 Alcoholica,Cerveza,25.0,100,CER100,1
 Bebida,Agua,12.0,100,AGU100,0
@@ -38,3 +38,5 @@ Alcoholica,Patrón Tequila,40.0,15,PTE021,1
 Comida,Sushi Nobu,18.0,25,SNB022,0
 CuidadoPersonal,Loción Corporal Neutrogena,10.99,50,LNC023,0
 Bebida,Corona Extra,5.0,40,CNE024,1
+CuidadoPersonal,Shiseido,900.0,6,SHI531D0,0
+CuidadoPersonal,Beauty of Joseon sun stick,500.0,1111,JOSEON,0
